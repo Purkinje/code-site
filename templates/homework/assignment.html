@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block head %}
+<link rel="stylesheet" title="IR Black" href="{{ STATIC_URL }}js/highlight/styles/ir_black.css">
+<script type="text/javascript" src="{{ STATIC_URL }}js/highlight/highlight.pack.js"></script>
+<script>
+  hljs.tabReplace = '    ';
+  hljs.initHighlightingOnLoad();
+</script>
+{% endblock %}
+<a name="top"></a>
+{% block page-title %}CSIS 3150 Homework{% endblock %}
+{% block page-description %}{{ week }}: {{ title }}{% endblock %}
+{% block header %}
+	{% if text %}<a href="#text">Text</a> |{% endif %}
+	{% if code %}<a href="#code">Code</a> |{% endif %}
+	{% if output %}<a href="#output">Output</a> |{% endif %}
+	{% if images %}<a href="#images">Images</a> |{% endif %}
+	<a href="{% url week week %}">Go back</a>
+{% endblock %}
+{% block content %}
+
+{# {{ code }} and {{ output }} aren't indented to avoid extra tabs in the pre tag #}
+{% if text %}
+	<div class="output-block">
+		<a name="text"></a>
+		<h2>Text:</h2>
+		<a href="#top">Top</a>
+		<pre>{{ text }}</pre>
+	</div>
+{% endif %}
+{% if code %}
+	<div class="code-block">
+		<a name="code"></a>
+		<h2>Code:</h2>
+		<a href="#top">Top</a>
+		<pre>
+		<code>{{ code }}</code>
+		</pre>
+	</div>
+{% endif %}
+
+{% if output %}
+	<div class="output-block">
+		<a name="output"></a>
+		<h2>Output:</h2>
+		<a href="#top">Top</a>
+		<pre>{{ output }}</pre>
+	</div>
+{% endif %}
+
+{% if images %}
+	<div class="output-block">
+		<a name="images"></a>
+		<h2>Images:</h2>
+		<a href="#top">Top</a>
+		<div>{{ images|safe }}</div>
+	</div>
+{% endif %}
+
+
+
+{% endblock %}

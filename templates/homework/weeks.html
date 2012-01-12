@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block page-title %}CSIS 3150 Homework{% endblock %}
+{% block page-description %}{% endblock %}
+{% block content %}
+<ul>
+	{% for week in weeks %}
+		<li><a href="{% url week week %}">{{ week }}</a></li>
+	{% endfor %}
+</ul>
+{% endblock %}

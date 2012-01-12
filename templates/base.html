@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>{% block title %}Homework Title{% endblock %}</title>
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
+		{# additional javascript or css can be added to block head #}
+		{% block head %}{% endblock %}
+	</head>
+	<body>
+		<div id="outer-shell">
+			<div id="header">
+				<h1>{% block page-title %}Page Title here{% endblock %}</h1>
+				<h2>{% block page-description %}Page Description here{% endblock %}</h2>
+				{% block header %}{% endblock %}
+			</div>
+			<div id="content">
+				{% block content %}
+				{% endblock %}
+			</div>
+		</div>
+	</body>
+</html>

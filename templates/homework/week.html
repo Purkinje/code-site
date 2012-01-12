@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block page-title %}CSIS 3150 Homework{% endblock %}
+{% block page-description %}
+{{ week }} Assignments | <a href="{% url weeks %}">Go back</a>
+{% endblock %}
+{% block content %}
+<ul>
+	{% for assignment in assignments %}
+		<li><a href="{% url hw week assignment %}">{{ assignment }}</a></li>
+	{% endfor %}
+</ul>
+{% endblock %}

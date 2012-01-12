@@ -5,7 +5,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    # ('Nathan Jones', 'Purkinje90@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -102,7 +102,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'csis3150site.urls'
+ROOT_URLCONF = 'code-site.urls'
 
 TEMPLATE_DIRS = (
     ROOT_PATH + '/templates',
@@ -115,7 +115,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'csis3150site.homework',
+    'code-site.homework',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
